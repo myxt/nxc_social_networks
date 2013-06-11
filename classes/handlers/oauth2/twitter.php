@@ -27,10 +27,10 @@ class nxcSocialNetworksOAuth2Twitter extends nxcSocialNetworksOAuth2
 		$http->setSessionVariable( 'twitter_request_token_secret', $requestToken['oauth_token_secret'] );
 		switch( $connection->http_code ) {
 			case 200:
-				return $connection->getAuthorizeURL( $requestToken['oauth_token'], true );
+				//return $connection->getAuthorizeURL( $requestToken['oauth_token'], true );
 			default:
-				throw new Exception( 'Could not connect to Twitter. Refresh the page or try again later.' );
 				eZDebug::writeDebug($connection);
+				throw new Exception( 'Could not connect to Twitter. Refresh the page or try again later.' );
 		}
 	}
 
